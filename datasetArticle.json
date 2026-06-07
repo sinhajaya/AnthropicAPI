@@ -1,0 +1,111 @@
+[
+  {
+    "prompt_inputs": {
+      "content": "The intersection of digital ethnography and urban sociology reveals how algorithmic governance reshapes social stratification in metropolitan environments. By analyzing data-driven residential surveillance and the socio-spatial patterns of digital gentrification, researchers can observe how automated decision-making processes institutionalize exclusion within historically marginalized communities. This analysis bridges the gap between phenomenological experiences of public space and the structural logic of platform capitalism."
+    },
+    "solution_criteria": [
+      "Returns a valid JSON array of strings",
+      "Includes 'digital ethnography', 'urban sociology', 'algorithmic governance', 'social stratification', 'digital gentrification', and 'platform capitalism' as topics",
+      "Excludes extraneous metadata or conversational filler"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with interdisciplinary research that blends humanities and social sciences to evaluate subject ambiguity"
+  },
+  {
+    "prompt_inputs": {
+      "content": "The implementation of surface code error correction in superconducting qubit arrays necessitates high-fidelity two-qubit gate operations to maintain logical qubit coherence. By utilizing a heavy-hexagon lattice architecture, we suppress leakage errors into non-computational states, thereby facilitating fault-tolerant quantum computation despite local decoherence and dephasing mechanisms inherent in the Josephson junction circuitry."
+    },
+    "solution_criteria": [
+      "Returns a JSON array of strings",
+      "Includes 'surface code error correction'",
+      "Includes 'superconducting qubit arrays'",
+      "Includes 'fault-tolerant quantum computation'"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with highly technical, jargon-heavy quantum physics text to assess precision in terminology"
+  },
+  {
+    "prompt_inputs": {
+      "content": "The study of urban heat islands reveals that local climate change is heavily influenced by anthropogenic land-cover changes, specifically the replacement of natural vegetation with asphalt and concrete surfaces. Furthermore, the analysis of socioeconomic disparities indicates that low-income residential districts frequently experience higher thermal exposure due to a relative lack of green space and canopy cover. In addition to these environmental factors, the integration of smart city sensor networks has provided granular data on nocturnal cooling patterns, highlighting how architectural density traps radiative heat overnight."
+    },
+    "solution_criteria": [
+      "Returns a valid JSON array of strings",
+      "Includes 'urban heat islands', 'anthropogenic land-cover changes', 'socioeconomic disparities', 'green space', and 'smart city sensor networks' as extracted topics",
+      "Contains only relevant topics mentioned in the text"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a passage containing multiple distinct sub-topics to evaluate the model's ability to maintain a comprehensive list"
+  },
+  {
+    "prompt_inputs": {
+      "content": "This study examines the neurobiological mechanisms underlying episodic memory consolidation in patients with early-stage Alzheimer's disease."
+    },
+    "solution_criteria": [
+      "Returns a valid JSON array of strings",
+      "Identifies granular topics such as 'neurobiology', 'episodic memory', 'memory consolidation', and 'Alzheimer's disease'",
+      "Excludes extraneous commentary or markdown formatting outside the JSON structure"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a short, single-sentence abstract to determine if the model can extract granular topics from minimal context"
+  },
+  {
+    "prompt_inputs": {
+      "content": "The Treaty of Versailles, signed on June 28, 1919, fundamentally reshaped the geopolitical landscape of post-WWI Europe. By imposing significant territorial losses and financial reparations on the Weimar Republic, the document sought to dismantle the influence of the German Empire. Diplomats like Georges Clemenceau and Woodrow Wilson remained central figures throughout the Paris Peace Conference, where debates regarding the League of Nations exposed deep divisions over the strategy of collective security."
+    },
+    "solution_criteria": [
+      "Returns a valid JSON array of strings",
+      "Includes core proper nouns as topics (Treaty of Versailles, Weimar Republic, German Empire, Georges Clemenceau, Woodrow Wilson, Paris Peace Conference, League of Nations)",
+      "Excludes extraneous conversational text"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with an historical analysis article containing proper nouns (names, dates, events) as core topics"
+  },
+  {
+    "prompt_inputs": {
+      "content": "Upon the investigation of the nervous mechanism, it becomes manifest that the correlation between the sensory apparatus and the cerebral faculties is governed by a singular, albeit obscure, principle of excitation. We must observe that the phenomena of reflex action, when contemplated through the lens of comparative anatomy, suggest a hierarchy of function that transcends mere mechanical response, touching instead upon the very seat of volition and the elusive nature of the animal spirits which have so long confounded the natural philosopher."
+    },
+    "solution_criteria": [
+      "Returns a valid JSON array of strings",
+      "Identifies core scholarly topics (e.g., nervous mechanism, reflex action, comparative anatomy, volition)"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a text written in an archaic or formal 19th-century academic style to test linguistic versatility"
+  },
+  {
+    "prompt_inputs": {
+      "content": "In contemporary urban planning, a vigorous debate persists regarding the prioritization of transit-oriented development (TOD) versus the preservation of historic district integrity. Proponents of TOD argue that increasing density around transit nodes is essential to mitigate climate change and reduce reliance on private vehicles. Conversely, preservationists contend that such interventions frequently erode the unique cultural identity of neighborhoods and threaten the architectural heritage that defines local character, suggesting that density mandates should be subordinate to heritage conservation."
+    },
+    "solution_criteria": [
+      "The output must be a valid JSON array of strings",
+      "The array must include 'transit-oriented development' or a synonymous term",
+      "The array must include 'historic district preservation' or a synonymous term",
+      "No extraneous text or markdown outside the JSON array"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with an article excerpt that discusses a debate or opposing viewpoints to see if the model identifies both sides as topics"
+  },
+  {
+    "prompt_inputs": {
+      "content": "In recent longitudinal studies on clinical linguistics, the analysis of ACP has shifted significantly. While some researchers focus on Advanced Care Planning protocols for patients with progressive neurodegenerative diseases, others prioritize the role of Auditory Cortical Potentials in processing syntax-level ambiguity. Similarly, the study of EBM has evolved; in public health, it frequently denotes Evidence-Based Medicine, yet within our specific focus on diagnostic imaging software, it refers to Entity-Based Modeling frameworks for neural architecture."
+    },
+    "solution_criteria": [
+      "The output must be a valid JSON array of strings.",
+      "The extracted topics must correctly identify the specific meanings of 'ACP' and 'EBM' based on the provided context.",
+      "The output must not include generic or ambiguous acronyms without their resolved context."
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a passage containing highly ambiguous acronyms to check for context-aware expansion in the output array"
+  },
+  {
+    "prompt_inputs": {
+      "content": "The application of machine learning architectures in genomic sequencing (Smith, 2021) has fundamentally altered our understanding of protein folding kinetics (Doe & Jones, 2022). Recent advancements in transformer-based models allow for the high-throughput analysis of polypeptide chains (Brown et al., 2023), effectively mitigating the error rates historically associated with traditional Bayesian inference methods (Garcia, 2019; Williams, 2020). These computational techniques provide a robust framework for identifying complex structural motifs in proteomic data sets (Johnson, 2024)."
+    },
+    "solution_criteria": [
+      "The output must be a valid JSON array of strings",
+      "The output must contain only subject-matter topics and exclude parenthetical citations",
+      "The output must include the core topics: machine learning architectures, genomic sequencing, protein folding kinetics, transformer-based models, polypeptide chains, Bayesian inference, and proteomic data sets"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a text riddled with parenthetical citations to ensure the model filters out metadata and focuses solely on subject matter"
+  }
+]
