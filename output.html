@@ -1,0 +1,203 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prompt Evaluation Report</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                color: #333;
+            }
+            .header {
+                background-color: #f0f0f0;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            .summary-stats {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .stat-box {
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 15px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                flex-basis: 30%;
+                min-width: 200px;
+            }
+            .stat-value {
+                font-size: 24px;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th {
+                background-color: #4a4a4a;
+                color: white;
+                text-align: left;
+                padding: 12px;
+            }
+            td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                vertical-align: top;
+            }
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            .output-cell {
+                white-space: pre-wrap;
+            }
+            .score {
+                font-weight: bold;
+                padding: 5px 10px;
+                border-radius: 3px;
+                display: inline-block;
+            }
+            .score-high {
+                background-color: #c8e6c9;
+                color: #2e7d32;
+            }
+            .score-medium {
+                background-color: #fff9c4;
+                color: #f57f17;
+            }
+            .score-low {
+                background-color: #ffcdd2;
+                color: #c62828;
+            }
+            .output {
+                overflow: auto;
+                white-space: pre-wrap;
+            }
+
+            .output pre {
+                background-color: #f5f5f5;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 10px;
+                margin: 0;
+                font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+                font-size: 14px;
+                line-height: 1.4;
+                color: #333;
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+                overflow-x: auto;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+            }
+
+            td {
+                width: 20%;
+            }
+            .score-col {
+                width: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Prompt Evaluation Report</h1>
+            <div class="summary-stats">
+                <div class="stat-box">
+                    <div>Total Test Cases</div>
+                    <div class="stat-value">3</div>
+                </div>
+                <div class="stat-box">
+                    <div>Average Score</div>
+                    <div class="stat-value">10.0 / 10</div>
+                </div>
+                <div class="stat-box">
+                    <div>Pass Rate (≥7)</div>
+                    <div class="stat-value">100.0%</div>
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Scenario</th>
+                    <th>Prompt Inputs</th>
+                    <th>Solution Criteria</th>
+                    <th>Output</th>
+                    <th>Score</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            <tr>
+                <td>Testing with an abstract written in dense, archaic, or heavily jargon-laden academic prose to determine if the model can filter out stylistic noise and extract core conceptual topics.</td>
+                <td class="prompt-inputs"><strong>content:</strong> The ontological presuppositions inherent in late-scholastic epistemic frameworks necessitate a rigorous re-evaluation of hylomorphic dualism when juxtaposed against the paradigm of Cartesian mechanicism. By eschewing the teleological finality characteristic of Aristotelian natural philosophy, we discern a radical rupture in the continuum of causal agency, thereby problematizing the locus of sovereign subjectivity within the nexus of seventeenth-century discursive formations.</td>
+                <td class="criteria">• JSON output must be a valid array of strings<br>• Extracts core concepts (e.g., hylomorphic dualism, Cartesian mechanicism, Aristotelian philosophy) while filtering out stylistic academic jargon<br>• Excludes purely descriptive adjectives or filler phrases</td>
+                <td class="output"><pre>```json
+[
+  "Late-scholastic epistemology",
+  "Hylomorphic dualism",
+  "Cartesian mechanicism",
+  "Aristotelian natural philosophy",
+  "Causal agency",
+  "Sovereign subjectivity",
+  "Seventeenth-century discursive formations"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">10</span></td>
+                <td class="reasoning">The solution strictly adheres to all mandatory requirements and effectively filters out academic jargon while retaining the core philosophical concepts requested. It is formatted correctly and contains no extra text.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with an extremely brief, single-sentence conclusion from a humanities paper to evaluate the model's ability to maintain high precision without the benefit of extensive context or supporting details.</td>
+                <td class="prompt-inputs"><strong>content:</strong> Ultimately, the deconstruction of heteronormative archival silences reveals the persistent intersectionality between subaltern historiography and the performative nature of queer identity.</td>
+                <td class="criteria">• The output must be a valid JSON array of strings.<br>• The extracted topics must accurately reflect the core themes of the sentence (e.g., heteronormativity, historiography, queer identity).<br>• The extraction must not include commentary or meta-text.</td>
+                <td class="output"><pre>```json
+[
+  "Heteronormativity",
+  "Archival silences",
+  "Intersectionality",
+  "Subaltern historiography",
+  "Queer identity performativity"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">10</span></td>
+                <td class="reasoning">The solution perfectly adheres to all mandatory requirements and secondary criteria. It provides a clean, accurate, and valid JSON array without any extraneous content.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a passage containing highly multidisciplinary content to evaluate the model's ability to identify overlapping categories (e.g., a text on the intersection of climate change policy and economic theory).</td>
+                <td class="prompt-inputs"><strong>content:</strong> The integration of carbon pricing mechanisms into national fiscal policy reveals a complex tension between environmental sustainability goals and long-term macroeconomic stability. While Pigouvian taxation on industrial emissions serves as a primary tool for decarbonization, critics argue that aggressive implementation may inadvertently induce 'greenflation,' destabilizing commodity prices and labor markets. Conversely, proponents emphasize that the structural shift toward a low-carbon economy fosters technological innovation and promotes sustainable growth patterns, effectively hedging against the catastrophic financial externalities associated with unchecked global temperature rise.</td>
+                <td class="criteria">• Returns a valid JSON array of strings<br>• Identifies both environmental/climate policy topics and economic theory topics<br>• Avoids redundant or overly generic tags</td>
+                <td class="output"><pre>```json
+[
+  "Carbon pricing",
+  "Fiscal policy",
+  "Environmental sustainability",
+  "Macroeconomic stability",
+  "Pigouvian taxation",
+  "Greenflation",
+  "Low-carbon economy",
+  "Technological innovation",
+  "Financial externalities"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">10</span></td>
+                <td class="reasoning">The solution perfectly fulfills the task requirements. It provides a valid JSON array of strings, captures both environmental and economic themes, avoids redundancy, and strictly adheres to the mandatory formatting constraints.</td>
+            </tr>
+        
+            </tbody>
+        </table>
+    </body>
+    </html>
+    

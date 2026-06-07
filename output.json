@@ -1,0 +1,53 @@
+[
+  {
+    "output": "```json\n[\n  \"Late-scholastic epistemology\",\n  \"Hylomorphic dualism\",\n  \"Cartesian mechanicism\",\n  \"Aristotelian natural philosophy\",\n  \"Causal agency\",\n  \"Sovereign subjectivity\",\n  \"Seventeenth-century discursive formations\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "The ontological presuppositions inherent in late-scholastic epistemic frameworks necessitate a rigorous re-evaluation of hylomorphic dualism when juxtaposed against the paradigm of Cartesian mechanicism. By eschewing the teleological finality characteristic of Aristotelian natural philosophy, we discern a radical rupture in the continuum of causal agency, thereby problematizing the locus of sovereign subjectivity within the nexus of seventeenth-century discursive formations."
+      },
+      "solution_criteria": [
+        "JSON output must be a valid array of strings",
+        "Extracts core concepts (e.g., hylomorphic dualism, Cartesian mechanicism, Aristotelian philosophy) while filtering out stylistic academic jargon",
+        "Excludes purely descriptive adjectives or filler phrases"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+      "scenario": "Testing with an abstract written in dense, archaic, or heavily jargon-laden academic prose to determine if the model can filter out stylistic noise and extract core conceptual topics."
+    },
+    "score": 10,
+    "reasoning": "The solution strictly adheres to all mandatory requirements and effectively filters out academic jargon while retaining the core philosophical concepts requested. It is formatted correctly and contains no extra text."
+  },
+  {
+    "output": "```json\n[\n  \"Heteronormativity\",\n  \"Archival silences\",\n  \"Intersectionality\",\n  \"Subaltern historiography\",\n  \"Queer identity performativity\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "Ultimately, the deconstruction of heteronormative archival silences reveals the persistent intersectionality between subaltern historiography and the performative nature of queer identity."
+      },
+      "solution_criteria": [
+        "The output must be a valid JSON array of strings.",
+        "The extracted topics must accurately reflect the core themes of the sentence (e.g., heteronormativity, historiography, queer identity).",
+        "The extraction must not include commentary or meta-text."
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+      "scenario": "Testing with an extremely brief, single-sentence conclusion from a humanities paper to evaluate the model's ability to maintain high precision without the benefit of extensive context or supporting details."
+    },
+    "score": 10,
+    "reasoning": "The solution perfectly adheres to all mandatory requirements and secondary criteria. It provides a clean, accurate, and valid JSON array without any extraneous content."
+  },
+  {
+    "output": "```json\n[\n  \"Carbon pricing\",\n  \"Fiscal policy\",\n  \"Environmental sustainability\",\n  \"Macroeconomic stability\",\n  \"Pigouvian taxation\",\n  \"Greenflation\",\n  \"Low-carbon economy\",\n  \"Technological innovation\",\n  \"Financial externalities\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "The integration of carbon pricing mechanisms into national fiscal policy reveals a complex tension between environmental sustainability goals and long-term macroeconomic stability. While Pigouvian taxation on industrial emissions serves as a primary tool for decarbonization, critics argue that aggressive implementation may inadvertently induce 'greenflation,' destabilizing commodity prices and labor markets. Conversely, proponents emphasize that the structural shift toward a low-carbon economy fosters technological innovation and promotes sustainable growth patterns, effectively hedging against the catastrophic financial externalities associated with unchecked global temperature rise."
+      },
+      "solution_criteria": [
+        "Returns a valid JSON array of strings",
+        "Identifies both environmental/climate policy topics and economic theory topics",
+        "Avoids redundant or overly generic tags"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+      "scenario": "Testing with a passage containing highly multidisciplinary content to evaluate the model's ability to identify overlapping categories (e.g., a text on the intersection of climate change policy and economic theory)."
+    },
+    "score": 10,
+    "reasoning": "The solution perfectly fulfills the task requirements. It provides a valid JSON array of strings, captures both environmental and economic themes, avoids redundancy, and strictly adheres to the mandatory formatting constraints."
+  }
+]
